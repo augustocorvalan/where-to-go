@@ -1,0 +1,5 @@
+Recently, I have been become interested in urban theory and exploration. For this pair-programming exercise I would like to create a webpage that answers the question Where to Go?
+
+I have attached a server that returns a page called Where to Go? which displays a title and a button that reads "Tell Me Where to Go."
+
+During the pair interview I would like to add an endpoint that constructs and returns random answers to the question Where to Go which the webpage displays for the user.
