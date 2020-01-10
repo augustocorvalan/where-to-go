@@ -15,7 +15,13 @@ const requestHandler = (request, response) => {
 
 	// get path name
 	const pathName = __dirname + url.parse(request.url).pathname;
-	const isFile = fs.lstatSync(pathName).isFile();
+
+	let isFile = null;
+	try {
+		isFile = fs.lstatSync(pathName).isFile();
+	} catch (e) {
+		console.error(e)
+	}
 
 	// if it's a file return that
 	if (isFile) {
@@ -44,7 +50,6 @@ server.listen(port, (err) => {
 
 
 /* Helpers */
-
 function respond404 (response) {
 	response.writeHead(404, {'Content-type':'text/plan'});
 	response.write('Page Was Not Found');
